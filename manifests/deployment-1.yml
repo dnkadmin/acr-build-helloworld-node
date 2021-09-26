@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "dnkaki01-57ec"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "dnkaki01-57ec"
+  template:
+    metadata:
+      labels:
+        app: "dnkaki01-57ec"
+    spec:
+      containers:
+        - name: "dnkaki01-57ec"
+          image: "dnkaciregistry.azurecr.io/dnkaki01"
+          ports:
+          - containerPort: 80
